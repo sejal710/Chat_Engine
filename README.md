@@ -1,6 +1,5 @@
 
-install some packeges is -- 
+<h1>install some packeges in server -- </h1>
 
---> @ant-design/icons 
---> axios 
---> react-chat-engine
+# express | mongoose | nodemon | socket.io | bcrypt | dotenv | cors
+
