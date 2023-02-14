@@ -1,16 +1,18 @@
-
-import {ChatEngine} from 'react-chat-engine';
-
-import './App.css';
+import react from 'react';
+import {BrowserRouter,Route,Routes} from 'react-router-dom';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Chat from './pages/Chat'
 
 const App = () => {
     return (
-        <ChatEngine 
-           height = '100vh'
-           projectID = "a44c4960-d27e-4273-9ea7-8a9245d5031f"
-           userName = "710sejal@gmail.com"
-           userSecret= "Sejal710"
-         />
+       <BrowserRouter>
+       <Routes>
+        <Route path='/register' element={<Register />}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/' element={<Chat />}/>
+       </Routes>
+       </BrowserRouter>
     )
 }
 
