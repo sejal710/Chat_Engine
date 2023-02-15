@@ -1,15 +1,29 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import logo from '../assets/logo.jpg'
 
 function Register() {
+  const [values,setValues] = useState({
+    username :"",
+    email:"",
+    password:"",
+    confirmPassword:""
+  })
   const handleSubmit = (event) => {
     event.prventDefault();
     alert("form")
   }
+  // const handleValidation = () => {
+  //   const {password,confirmPassword,username,email} = values;
+  //   if(password !== confirmPassword){
+  //     // toast.error("password and confirm password should be same")
+  //   }
+  // }
+
   const handleChange = (event) => {
 
+    setValues({...values,[event.target.name]:event.target.value});
   }
   return (
     <>
