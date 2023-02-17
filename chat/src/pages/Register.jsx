@@ -15,6 +15,11 @@ function Register() {
     password:"",
     confirmPassword:""
   })
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-current-user")) {
+      navigate("/");
+    }
+  }, []);
   const toastOption = {
     position:"bottom-right",
     autoClose : 8000,
@@ -34,8 +39,12 @@ function Register() {
       if (data.status === false) {
         toast.error(data.msg, toastOption);
       }
-      if(data.status === true){
-       navigate("/") 
+      if (data.status === true) {
+        localStorage.setItem(
+          "chat-app-current-user",
+          JSON.stringify(data.user)
+        );
+        navigate("/");
       }
     }
   }
