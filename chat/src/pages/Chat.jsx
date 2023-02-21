@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 import styled from "styled-components";
 import { allUsersRoute, host } from "../utils/APIRoutes";
+import Contact from "../component/Contact";
 
 export default function Chat() {
   const navigate = useNavigate();
@@ -12,12 +13,12 @@ export default function Chat() {
   const [currentChat, setCurrentChat] = useState(undefined);
   const [currentUser, setCurrentUser] = useState(undefined);
   useEffect(async () => {
-    if (!localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
+    if (!localStorage.getItem("chat-app-current-user")) {
       navigate("/login");
     } else {
       setCurrentUser(
         await JSON.parse(
-          localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
+          localStorage.getItem("chat-app-current-user")
         )
       );
     }
@@ -46,8 +47,8 @@ export default function Chat() {
     <>
       <Container>
         <div className="container">
-          {/* <Contacts contacts={contacts} changeChat={handleChatChange} />
-          {currentChat === undefined ? (
+           <Contact contacts={contacts} changeChat={handleChatChange} />
+         {/* {currentChat === undefined ? (
             <Welcome />
           ) : (
             <ChatContainer currentChat={currentChat} socket={socket} />
