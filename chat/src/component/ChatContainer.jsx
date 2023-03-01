@@ -69,16 +69,16 @@ useEffect(async () => {
       });
     }
   }, []);
+  
   function playSound(audioName){
     let audio = new Audio(audioName);
     audio.play();
   }
-
+  // playSound(Pikachu)
   
   useEffect(() => {
     arrivalMessage && setMessages((prev) => [...prev, arrivalMessage]);
-    console.log(arrivalMessage);
-   
+    // playSound(Pikachu)
   }, [arrivalMessage]);
 
   useEffect(() => {
