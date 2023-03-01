@@ -74,11 +74,9 @@ useEffect(async () => {
     let audio = new Audio(audioName);
     audio.play();
   }
-  // playSound(Pikachu)
   
   useEffect(() => {
     arrivalMessage && setMessages((prev) => [...prev, arrivalMessage]);
-    // playSound(Pikachu)
   }, [arrivalMessage]);
 
   useEffect(() => {
