@@ -43,6 +43,7 @@ function Register() {
         localStorage.setItem(
           "chat-app-current-user",
           JSON.stringify(data.user)
+          
         );
         navigate("/");
       }

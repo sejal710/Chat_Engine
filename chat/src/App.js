@@ -11,7 +11,7 @@ const App = () => {
        <Routes>
         <Route path='/register' element={<Register />}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/setAvtar' element={<SetAvtar />} />
+        <Route path='/setAvatar' element={<SetAvtar />} />
         <Route path='/' element={<Chat />}/>
        </Routes>
        </BrowserRouter>

@@ -5,6 +5,8 @@ import { io } from "socket.io-client";
 import styled from "styled-components";
 import { allUsersRoute, host } from "../utils/APIRoutes";
 import Contact from "../component/Contact";
+import Welcome from "../component/Welcome";
+import ChatContainer from "../component/ChatContainer";
 
 export default function Chat() {
   const navigate = useNavigate();
@@ -48,11 +50,11 @@ export default function Chat() {
       <Container>
         <div className="container">
            <Contact contacts={contacts} changeChat={handleChatChange} />
-         {/* {currentChat === undefined ? (
+         {currentChat === undefined ? (
             <Welcome />
           ) : (
             <ChatContainer currentChat={currentChat} socket={socket} />
-          )} */}
+          )}
         </div>
       </Container>
     </>
