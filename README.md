@@ -1,5 +1,4 @@
 <h1 color="red" fontSize="30px"> Chating Dude  </h1>
- <h2> <a href="https://chating-dude.vercel.app/'>Deploy </a></h2>
 
 <h3> Create Account </h3>
 <img src='./chat/Images/signup.png'>
@@ -26,8 +25,8 @@
 
 - axios | styled-components | react-router-dom | react-toastify | uuid | emoji-picker-react
 
-
-
+<h2 > Deploy </h2>
+<a href="https://chating-dude.vercel.app" target="blank"> Link</a>
 
 
 
