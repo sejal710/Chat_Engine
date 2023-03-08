@@ -79,16 +79,16 @@ const Container = styled.div`
     background-color: #00000076;
     display: grid;
     grid-template-columns: 25% 75%;
-    @media screen and (min-width: 720px) and (max-width: 1080px) {
+    @media screen and (min-width: 620px) and (max-width: 1080px) {
       grid-template-columns: 35% 65%;
     }
   }
-  @media screen and (max-width: 720px){
+  @media screen and (max-width: 620px){
     width:100%;
     .container{
       width:98%;
       height:98%
-      grid-template-columns: 35% 65%;
+      grid-template-columns: 25% 75%;
     }
   }
 `;
