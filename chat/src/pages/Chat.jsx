@@ -7,6 +7,7 @@ import { allUsersRoute, host } from "../utils/APIRoutes";
 import Contact from "../component/Contact";
 import Welcome from "../component/Welcome";
 import ChatContainer from "../component/ChatContainer";
+import { ToastContainer } from "react-toastify";
 
 export default function Chat() {
   const navigate = useNavigate();
@@ -56,6 +57,7 @@ export default function Chat() {
             <ChatContainer currentChat={currentChat} socket={socket} />
           )}
         </div>
+        <ToastContainer />
       </Container>
     </>
   );
@@ -78,6 +80,14 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: 25% 75%;
     @media screen and (min-width: 720px) and (max-width: 1080px) {
+      grid-template-columns: 35% 65%;
+    }
+  }
+  @media screen and (max-width: 720px){
+    width:100%;
+    .container{
+      width:98%;
+      height:98%
       grid-template-columns: 35% 65%;
     }
   }

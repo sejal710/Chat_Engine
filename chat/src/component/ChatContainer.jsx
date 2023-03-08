@@ -5,13 +5,22 @@ import Logout from "./Logout";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import Pikachu from '../sound/Pikachu.mp3'
+import {toast} from 'react-toastify'
 import { sendMessageRoute, recieveMessageRoute } from "../utils/APIRoutes";
+import {BsFillChatDotsFill} from 'react-icons/bs'
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ChatContainer({ currentChat, socket }) {
   const [messages, setMessages] = useState([]);
   const scrollRef = useRef();
   const [arrivalMessage, setArrivalMessage] = useState(null);
-
+  // const toastOption = {
+  //   position:"bottom-right",
+  //   autoClose : 8000,
+  //   pauseOnHover : true,
+  //   draggable : true,
+  //   theme : "dark",
+  // }
 
 
 useEffect(async () => {
@@ -60,28 +69,34 @@ useEffect(async () => {
 
     setMessages(msgs);
   };
-
+  
   useEffect(() => {
     if (socket.current) {
       socket.current.on("msg-recieve", (msg) => {
-        playSound(Pikachu)
+        let audio = new Audio(Pikachu);
+        audio.play();
         setArrivalMessage({ fromSelf: false, message: msg });
       });
     }
-  }, []);
+    
+  }, [arrivalMessage]);
   
-  function playSound(audioName){
-    let audio = new Audio(audioName);
-    audio.play();
-  }
+  // function playSound(audioName){
+   
+
+  // }
   
   useEffect(() => {
-    arrivalMessage && setMessages((prev) => [...prev, arrivalMessage]);
-  }, [arrivalMessage]);
+    arrivalMessage && setMessages((prev) => 
+      [...prev, arrivalMessage]
+      ); 
+  }, []);
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+  
+  
 
   return (
     <Container>
@@ -95,6 +110,7 @@ useEffect(async () => {
           </div>
           <div className="username">
             <h3>{currentChat.username}</h3>
+
           </div>
         </div>
         <Logout />
@@ -117,6 +133,7 @@ useEffect(async () => {
         })}
       </div>
       <ChatInput handleSendMsg={handleSendMsg} />
+      
     </Container>
   );
 }
@@ -144,6 +161,8 @@ const Container = styled.div`
         }
       }
       .username {
+        diplay:flex;
+        justify-content:space-between;
         h3 {
           color: white;
         }
