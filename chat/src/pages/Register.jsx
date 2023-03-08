@@ -80,7 +80,7 @@ function Register() {
       <form action='' onSubmit={(event) =>handleSubmit(event)}>
         <div className="brand">
           <img src={logo} alt="Logo" />
-          <h1>Chating Dude</h1>
+          <h1>Chatting Dude</h1>
         </div>
         <input 
         type="text"
