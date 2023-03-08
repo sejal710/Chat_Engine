@@ -26,8 +26,7 @@
 - axios | styled-components | react-router-dom | react-toastify | uuid | emoji-picker-react
 
 <h2 > Deploy </h2>
-<a href=`https://chating-dude.vercel.app/`>link</a>
-
+<a href="https://chating-dude.vercel.app" target="blank"> Link</a>
 
 
 
